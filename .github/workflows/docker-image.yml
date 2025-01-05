@@ -46,7 +46,7 @@ jobs:
       - name: Display File Tree
         run: |
           echo "File tree of the current directory:"
-          ls -R .
+          ls 
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
