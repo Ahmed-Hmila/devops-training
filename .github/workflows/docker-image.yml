@@ -55,14 +55,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push Dockerfile 1
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./back-end/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/foyer-back:v-${{ github.run_number }}
-
       - name: Build and push Dockerfile 2
         uses: docker/build-push-action@v4
         with:
