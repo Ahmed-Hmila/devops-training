@@ -24,7 +24,7 @@ COPY --from=build /app/dist/university-management /usr/share/nginx/html
 COPY src/assets/config.json /usr/share/nginx/html/assets/config.json
 # Copy the custom Nginx configuration file
 # Make sure the nginx.conf file is in the same directory as the Dockerfile
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
