@@ -43,6 +43,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Display File Tree
+        run: |
+          echo "File tree of the current directory:"
+          ls -R .
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 

@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # Install the dependencies
-RUN npm install --timeout=300000
+RUN npm install
 
 # Copy the entire Angular project to the container
 COPY . .
