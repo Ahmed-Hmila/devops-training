@@ -1,0 +1,113 @@
+/* Import font and reset styles */
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  background-color: #F3F7EC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #052b48;
+  font-family: "Fredericka the Great", cursive;
+}
+
+/* Container Styling */
+.universities-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Header Styling */
+h2 {
+  color: #052b48;
+  font-size: 2rem;
+  filter: drop-shadow(3px 3px 0 #E88D67);
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+.button, .update, .delete {
+  border-radius: 9999px;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Primary Button */
+.button {
+  background-color: #006989;
+  color: white;
+  border: none;
+}
+
+.button:hover {
+  color: #E88D67;
+}
+
+/* Update Button */
+.update {
+  background-color: #6c757d;
+  color: white;
+}
+
+.update:hover {
+  background-color: #5a6268;
+}
+
+/* Delete Button */
+.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete:hover {
+  background-color: #c82333;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #E88D67;
+}
+
+th {
+  background-color: #E88D67;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Link Styling */
+a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}

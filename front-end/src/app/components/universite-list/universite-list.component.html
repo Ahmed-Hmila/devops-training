@@ -1,0 +1,24 @@
+<div class="universities-container">
+  <h2>Universities List</h2>
+  <button class="button" (click)="navigateToAddUniversite()">Add University</button>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let universite of universites">
+      <td>{{ universite.idUniversite }}</td>
+      <td>
+        <a (click)="navigateToUniversiteDetails(universite.idUniversite)">{{ universite.nomUniversite }}</a>
+      </td>
+      <td>{{ universite.adresse }}</td>
+      <td>
+        <button class="update" (click)="navigateToUpdateUniversite(universite.idUniversite)">Update</button>
+        <button class="delete" (click)="deleteUniversite(universite.idUniversite)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
