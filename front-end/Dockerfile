@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # Install the dependencies
-RUN npm install
+RUN npm install --timeout=300000
 
 # Copy the entire Angular project to the container
 COPY . .
@@ -21,7 +21,7 @@ FROM nginx:alpine
 
 # Copy the built Angular app from the previous stage to Nginx's default html directory
 COPY --from=build /app/dist/university-management /usr/share/nginx/html
-
+COPY src/assets/config.json /usr/share/nginx/html/assets/config.json
 # Copy the custom Nginx configuration file
 # Make sure the nginx.conf file is in the same directory as the Dockerfile
 COPY nginx.conf /etc/nginx/conf.d/default.conf

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ConfigService } from './config.service';
 
 interface Universite {
   idUniversite?: number;
@@ -9,12 +10,14 @@ interface Universite {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UniversiteService {
-  private apiUrl = 'http://192.168.50.4:8089/tpfoyer/universite';
+  private apiUrl: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private configService: ConfigService) {
+    this.apiUrl = this.configService.apiUrl;
+  }
 
   getUniversites(): Observable<Universite[]> {
     return this.http.get<Universite[]>(`${this.apiUrl}/retrieve-all-universites`);
@@ -23,6 +26,7 @@ export class UniversiteService {
   getUniversiteById(id: number): Observable<Universite> {
     return this.http.get<Universite>(`${this.apiUrl}/retrieve-universite/${id}`);
   }
+
   addUniversite(universite: Universite): Observable<Universite> {
     return this.http.post<Universite>(`${this.apiUrl}/add-universite`, universite);
   }
