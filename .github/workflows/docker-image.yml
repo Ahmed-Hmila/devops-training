@@ -30,15 +30,15 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          key: ${{ runner.os }}-maven-${{ hashFiles('back-end/**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven
 
- 
-
       # Step 5: Install dependencies and run tests
       - name: Run Tests
-        run: mvn clean test
+        run: |
+          cd back-end
+          mvn clean test
 
   deploy:
     runs-on: ubuntu-latest
