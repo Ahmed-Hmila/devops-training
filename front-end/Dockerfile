@@ -5,7 +5,7 @@ FROM node:16 AS build
 WORKDIR /app
 
 # Copy package.json and package-lock.json to install dependencies
-COPY package.json package-lock.json ./ 
+COPY package.json package-lock.json ./
 
 # Install the dependencies
 RUN npm install
@@ -26,17 +26,8 @@ COPY --from=build /app/dist/university-management /usr/share/nginx/html
 # Make sure the nginx.conf file is in the same directory as the Dockerfile
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy the entrypoint script
-COPY docker-entrypoint.sh /usr/local/bin/
-
-# Make the entrypoint script executable
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-
 # Expose port 80
 EXPOSE 80
-
-# Set the entrypoint to replace environment variables at runtime
-ENTRYPOINT ["docker-entrypoint.sh"]
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
