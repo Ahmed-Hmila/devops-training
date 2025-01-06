@@ -22,10 +22,10 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin' # or 'zulu', 'adopt', etc.
+          distribution: 'temurin'  
           java-version: '17' 
 
-      # Step 3: Cache Maven dependencies (optional but speeds up builds)
+      # Step 3: Cache Maven dependencies  
       - name: Cache Maven dependencies
         uses: actions/cache@v3
         with:
